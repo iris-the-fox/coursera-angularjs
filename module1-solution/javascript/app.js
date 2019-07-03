@@ -9,7 +9,9 @@
     $scope.lunch = "";
 
     $scope.checkIt = function () {
-      var lunshList = $scope.lunch.split(','); 
+      var lunshList = $scope.lunch.split(',').filter(function(str) {
+    return /\S/.test(str);
+});;
       $scope.len = lunshList.length;  
       if ($scope.lunch=="") {
         $scope.message =  "Please enter data first";
